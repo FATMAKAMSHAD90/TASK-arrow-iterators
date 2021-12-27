@@ -6,7 +6,7 @@
  * eg: engineer(["zainab","omar","zahraa"]) => eng.zainab, eng.omar, eng.zahraa
  ************************************/
 const engineer = (array) => {
-  // input code here
+  array.forEach((element) => console.log(`eng.${element}`));
 };
 
 /*************************************
@@ -22,6 +22,11 @@ const engineer = (array) => {
  *   kwd = usd * 0.30
  ************************************/
 
+function toKWD(wallets) {
+  return wallets.map((wallet) => wallet * 0.3);
+}
+console.log(toKWD([99, 124, 150]));
+
 /**************************************
  * Challenge 3: richestWallet(wallets,maxAmount)
  *
@@ -31,6 +36,10 @@ const engineer = (array) => {
  * - Returns an array of wallets
  *   that exceed the maxAmount
  ***************************************/
+function richestWallet(wallets, maxAmount) {
+  return wallets.filter((wallet) => wallet > maxAmount);
+}
+console.log(richestWallet([99, 100, 50], 60));
 
 /******************************************
  * Challenge 4: makeLiteralGrades(grades)
@@ -46,3 +55,13 @@ const engineer = (array) => {
  * < 60   : F
  * Example: makeLiteralGrades([90, 70, 40]) should return ["A", "C", "F"]
  *******************************************/
+function makeLiteralGrades(grades) {
+  return grades.map((grade) => {
+    if (grade >= 90) return "A";
+    else if (grade >= 80) return "B";
+    else if (grade >= 70) return "C";
+    else if (grade >= 60) return "D";
+    else return "F";
+  });
+}
+console.log(makeLiteralGrades([90, 70, 40]));
